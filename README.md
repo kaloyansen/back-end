@@ -1,6 +1,6 @@
 # back-end
 
-## code back-end développé de Syriane-Bonjean, Guillaume, Kalo et Vahyt
+## code back-end développé de Syriane-Bonjean, Myriam, Guillaume, Kalo et Vahyt
 ## avec LAMP - une pile logicielle comprenant
 
 ##### 1. le système d'exploitation - Linux,
