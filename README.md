@@ -6,6 +6,7 @@
 ##### 1. le système d'exploitation - Linux,
 #### 2. un serveur HTTP - Apache2,
 ### 3. un système de gestion de bases de données - MySQL ou MariaDB et
-## 4. un langage de programmation interprété - perl, PHP ou Python.
+## 4. un langage de programmation interprété - perl, PHP7 ou Python3.
 # Elle permet de mettre en place un serveur web.
+
 Esse quam bonum, et quam quiche dum.
