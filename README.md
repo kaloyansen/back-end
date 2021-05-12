@@ -8,3 +8,4 @@
 ### 3. un système de gestion de bases de données - MySQL et
 ## 4. un langage de programmation interprété - perl, PHP ou Python.
 # Elle permet de mettre en place un serveur web.
+Esse quat bonum, et guam qucuhdum.
