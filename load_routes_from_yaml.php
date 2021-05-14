@@ -10,6 +10,7 @@ require  __DIR__.'/vendor/autoload.php';
 
 $routes = require __DIR__.'/config/routes.php';
 
+$_route = '';
 $response = new Response();
 
 // Init RequestContext object
@@ -23,7 +24,6 @@ try
 {
     // Find the current route
     extract($matcher->match($context->getPathInfo()));
-
     include __DIR__.'/src/Controllers/'. $_route. '.php';
 }
 catch (ResourceNotFoundException $e)
