@@ -2,7 +2,6 @@
 // Se connecter à la base de données
 include("db_connect.php");
 $request_method = $_SERVER["REQUEST_METHOD"];
-
 switch($request_method)
 {
     case 'GET':
@@ -46,7 +45,7 @@ function getTicket($id=0)
     {
         $query .= " WHERE id=".$id." LIMIT 1";
     }
-    $response = array();
+    $response = [];
     $result = mysqli_query($conn, $query);
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
     {

@@ -1,4 +1,4 @@
 /.idea
 db_connect.php
-/Controllers/databaseController.php
+/src/Controllers/databaseController.php
 /vendor
