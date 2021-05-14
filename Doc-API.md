@@ -1,4 +1,4 @@
-# /api/postits
+# /postits
 
 ### GET
 Give all postits entries with this json pattern :  
@@ -34,8 +34,8 @@ Create a postit in the database, in the body of the request. The pattern wanted 
 ```
 return http response code 201 if success or 500 if failure
 
+# /postits/{id}
 
-# api/postit/{id}
 ### PUT
 Update the postit with postit data in request body : 
 ```
