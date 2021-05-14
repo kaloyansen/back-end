@@ -5,10 +5,9 @@ $request_method = $_SERVER["REQUEST_METHOD"];
 switch($request_method)
 {
     case 'GET':
-        if(!empty($_GET["id"]))
+        if($id)
         {
             // Récupérer un seul produit
-            $id = intval($_GET["id"]);
             getTicket($id);
         }
         else
@@ -19,7 +18,6 @@ switch($request_method)
         break;
     case 'PUT':
         // Modifier un produit
-        $id = intval($_GET["id"]);
         updateTicket($id);
         break;
     case 'POST':
@@ -28,7 +26,6 @@ switch($request_method)
         break;
     case 'DELETE':
         // Supprimer un produit
-        $id = intval($_GET["id"]);
         deleteTicket($id);
         break;
     default:
