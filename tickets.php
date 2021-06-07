@@ -4,7 +4,7 @@
 include("db_connect.php");
 $request_method = $_SERVER["REQUEST_METHOD"];
 
-function getTickets($id = null)
+function getTicket($id = null)
 {
     global $conn;
     $query = "SELECT * FROM postit";
@@ -107,11 +107,11 @@ switch($request_method)
         if(!empty($_GET["id"]))
         {
             $id=intval($_GET["id"]);
-            getTickets($id);
+            getTicket($id);
         }
         else
         {
-            getTickets();
+            getTicket();
         }
         break;
     default:
