@@ -4,10 +4,11 @@
 include("db_connect.php");
 $request_method = $_SERVER["REQUEST_METHOD"];
 
-function getTickets()
+function getTickets($id = null)
 {
     global $conn;
     $query = "SELECT * FROM postit";
+    if ($id != null) $query = $query." WHERE id=".$id;
     $response = array();
     $result = mysqli_query($conn, $query);
     while($row = mysqli_fetch_array($result))
