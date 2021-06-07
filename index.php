@@ -1,5 +1,1 @@
-<?php
-
-include("tickets.php");
-
-?>
+<?php include("tickets.php"); ?>
