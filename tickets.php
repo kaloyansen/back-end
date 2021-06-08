@@ -70,14 +70,14 @@ function addTicket()
     if(mysqli_query($conn, $query))
     {
         $response=array(
-            'status' => 1,
+            'status' => 201,
             'status_message' =>'Postit ajout� avec succ�s.'
         );
     }
     else
     {
         $response=array(
-            'status' => 0,
+            'status' => 500,
             'status_message' =>'ERREUR!.'. mysqli_error($conn)
         );
     }
@@ -101,14 +101,14 @@ function updateTicket($id)
     if(mysqli_query($conn, $query))
     {
         $response=array(
-            'status' => 1,
+            'status' => 200,
             'status_message' =>'Postit mis a jour avec succes.'
         );
     }
     else
     {
         $response=array(
-            'status' => 0,
+            'status' => 500,
             'status_message' =>'Echec de la mise a jour du postit. '. mysqli_error($conn)
         );
 
@@ -125,14 +125,14 @@ function deleteTicket($id)
     if(mysqli_query($conn, $query))
     {
         $response=array(
-            'status' => 1,
+            'status' => 200,
             'status_message' =>'Produit supprime avec succes.'
         );
     }
     else
     {
         $response=array(
-            'status' => 0,
+            'status' => 500,
             'status_message' =>'La suppression du produit a echoue. '. mysqli_error($conn)
         );
     }
