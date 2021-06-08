@@ -54,14 +54,14 @@ function updateTicket($id)
     $body = $_PUT["body"];
     $actualPosition = $_PUT["actualPosition"];
     $status = $_PUT["status"];
-    $color = $_POST["color"];
+    $color = $_PUT["color"];
     $query = "UPDATE postit
                 SET title = '" .$title . "',
                     body = '" .$body . "', 
                     actualPosition = '" .$actualPosition . "',
                     status = '" .$status . "',
                     color = '" .$color . "',
-                WHERE id = '" .$color . "';";
+                WHERE id = " .$id;
 
     if(mysqli_query($conn, $query))
     {
