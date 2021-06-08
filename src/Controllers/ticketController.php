@@ -45,6 +45,11 @@ function getTickets()
         $response[] = $row;
     }
     header('Content-Type: application/json');
+    if($response === []) {
+        $response[] = [
+            "il n'y a pas de ticket disponible"
+        ];
+    }
     echo json_encode($response,JSON_PRETTY_PRINT);
 }
 
@@ -61,6 +66,11 @@ function getTicket($id=0)
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
     {
         $response[] = $row;
+    }
+    if($response === []) {
+        $response[] = [
+            "il n'y a pas de ticket disponible"
+        ];
     }
     header('Content-Type: application/json');
     echo json_encode($response, JSON_PRETTY_PRINT);
