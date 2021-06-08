@@ -4,6 +4,45 @@
 include("db_connect.php");
 $request_method = $_SERVER["REQUEST_METHOD"];
 
+switch($request_method) {
+
+case 'GET':
+    // Retrive Products
+    if(!empty($_GET["id"]))
+    {
+        $id=intval($_GET["id"]);
+        getTicket($id);
+    }
+    else
+    {
+        getTicket();
+    }
+    break;
+
+case 'POST':
+    // Ajouter un produit
+    addTicket();
+    break;
+
+case 'PUT':
+    // Modifier un produit
+    $id = intval($_GET["id"]);
+    updateTicket($id);
+    break;
+
+case 'DELETE':
+    // Supprimer un produit
+    $id = intval($_GET["id"]);
+    deleteTicket($id);
+    break;
+
+default:
+    // Invalid Request Method
+    header("HTTP/1.0 405 Method Not Allowed");
+    break;    
+
+}
+
 function getTicket($id = null)
 {
     global $conn;
@@ -46,6 +85,7 @@ function addTicket()
     echo json_encode($response);
 
 }
+
 function updateTicket($id)
 {
     global $conn;
@@ -99,41 +139,5 @@ function deleteTicket($id)
     header('Content-Type: application/json');
     echo json_encode($response);
 }
-switch($request_method)
-{
 
-    case 'GET':
-        // Retrive Products
-        if(!empty($_GET["id"]))
-        {
-            $id=intval($_GET["id"]);
-            getTicket($id);
-        }
-        else
-        {
-            getTicket();
-        }
-        break;
-    default:
-        // Invalid Request Method
-        header("HTTP/1.0 405 Method Not Allowed");
-        break;
 
-    case 'POST':
-        // Ajouter un produit
-        addTicket();
-        break;
-
-    case 'PUT':
-        // Modifier un produit
-        $id = intval($_GET["id"]);
-        updateTicket($id);
-        break;
-
-    case 'DELETE':
-        // Supprimer un produit
-        $id = intval($_GET["id"]);
-        deleteTicket($id);
-        break;
-
-}
